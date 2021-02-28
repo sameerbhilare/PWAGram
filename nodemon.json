@@ -1,0 +1,9 @@
+{
+    "env": {
+      "DATABASE": "mongodb+srv://mean-user:1K6Hk0S7CykV3cJL@cluster0.zdoxp.mongodb.net/pwa-instaclone?retryWrites=true&w=majority",
+      "JWT_SECRET": "learning-pwa",
+      "WEB_PUSH_PUBLIC_KEY": "BA8Vh7nGbKi85yoYWtcj6D5BxDhoeLl4wlphcuwo7JGAFKE7DW8EtPL7SrGOW7geIl_T0YYt4m7JCM4ZYyOuTX8",
+      "WEB_PUSH_PRIVATE_KEY": "cmip6Asm98dG-ujnGKWrLqmNiRiHr0ZfL8kqHiO8BAw",
+      "EMAIL_ID": "bhilare.sameer@gmail.com"
+    }
+  }
