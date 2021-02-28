@@ -50,3 +50,19 @@ const server = http.createServer(app);
 server.on('error', onError);
 server.on('listening', onListening);
 server.listen(port);
+
+
+/*
+  Heroku dynos restart every 24 hours in order to keep your app in a healthy state.
+  And the way that Heroku does this is by sending the so-called SIGTERM signal to our node application, 
+  and the application will then basically shut down immediately. So we should handleit gracefully.
+*/
+process.on('SIGTERM', () => {
+  console.log('SIGTERM recevied. Shutting down gracefully...');
+  // With server.close, we give the server, time to finish all the request
+  // that are still pending or being handled at the time.
+  server.close(() => {
+    console.log('Process terminated!');
+    // no need to call process.exit because SIGTERM itself will cause the applicationto shutdown
+  });
+});
