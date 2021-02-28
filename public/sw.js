@@ -34,9 +34,9 @@ var STATIC_FILES = [
   '/offline.html', // this is the default offline fallback page
   '/src/js/app.js',
   '/src/js/idb-utility.js',
+  '/src/js/material.min.js',
   '/src/js/feed.js',
   '/src/js/idb.js', // to access it offline for easy access.
-  '/src/js/material.min.js',
   '/src/js/promise.js', // not required for browsers supporting SW. See above comment for details.
   '/src/js/fetch.js', // not required for browsers supporting SW. See above comment for details.
   '/src/css/app.css',

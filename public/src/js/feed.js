@@ -297,7 +297,7 @@ function createCard(data) {
   cardSupportingText.appendChild(cardSaveButton);
   */
   cardWrapper.appendChild(cardSupportingText);
-  componentHandler.upgradeElement(cardWrapper);
+  componentHandler?.upgradeElement(cardWrapper);
   sharedMomentsArea.appendChild(cardWrapper);
 }
 
