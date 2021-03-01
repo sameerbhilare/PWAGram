@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const postRoutes = require('./routes/post-routes');
 const subscriptionRoutes = require('./routes/subscription-routes');
@@ -23,6 +24,21 @@ mongoose
   So we need to trust the proxies. For this, express has built in support for this kind of situations.
 */
 app.enable('trust proxy');
+
+/****************************************************
+ * GLOBAL MIDDLEWARES
+ */
+// 1) implement cors
+// cors() returns a middleware function which will add a couple of different headers to our response.
+// We could add these headers manualy by ourselves without using this package but why reinvent?
+// this works for simple requests only - GET, POST
+app.use(cors());
+
+// 2) implement cors for non-simple requests
+// handling for non-simple requests like delete, patch, etc.
+// here we need to handle OPTIONS http method just like app.get() for GET method
+// we need to define the route for which we want to handle the OPTIONS requests.
+// app.options('*', cors());
 
 // parser body
 app.use(bodyParser.json()); // for json body
