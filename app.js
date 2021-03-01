@@ -17,6 +17,13 @@ mongoose
     console.log('Connection Failed.');
   });
 
+/*
+  request.secure doesn't work in the first place because Heroku acts as a proxy, 
+  which kind of redirects and modifies incoming requests.
+  So we need to trust the proxies. For this, express has built in support for this kind of situations.
+*/
+app.enable('trust proxy');
+
 // parser body
 app.use(bodyParser.json()); // for json body
 app.use(bodyParser.urlencoded()); // for url encoded body (html form)
